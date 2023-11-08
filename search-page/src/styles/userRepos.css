@@ -1,0 +1,39 @@
+
+
+.repos {
+  
+  font-family: 'Roboto Mono', monospace;
+  
+}
+
+.repos h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.repos ul {
+  list-style: none;
+  padding: 0;
+}
+.repos .username {
+  font-weight: 500;
+  color:aqua;
+}
+.repos li {
+  background-color: #212121;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  
+}
+
+.repos li a {
+  color: #3f9cff;
+  text-decoration: none;
+  
+}
+
+.repos li a:hover {
+  text-decoration: underline;
+}

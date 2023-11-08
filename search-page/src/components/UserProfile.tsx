@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/userProfile.css'
 
 interface UserProfileProps {
   username: string;
@@ -7,14 +8,16 @@ interface UserProfileProps {
 
 const UserProfile: React.FC<UserProfileProps> = ({ username, userData }) => {
   return (
-    <div>
-      <h2>{username}'s GitHub page</h2>
+    <div className="profile">
       <img src={userData.avatar_url} alt="User Avatar" className="user-avatar" />
-      <p>Username: {userData.login}</p>
-      <p>Bio: {userData.bio}</p>
-      <p>Followers: {userData.followers}</p>
-      <p>Following: {userData.following}</p>
-      <p>Location: {userData.location}</p>
+      <div>
+        <h3><em> Welcome {userData.login}!</em></h3>
+        { userData.bio && <p><b>Bio:</b> {userData.bio}</p>}
+        <p><b>Followers: </b>{userData.followers}</p>
+        <p><b>Following:</b> {userData.following}</p>
+        <p><b>Location:</b> {userData.location}</p>
+      </div>
+     
     </div>
   );
 };

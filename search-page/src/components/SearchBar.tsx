@@ -5,6 +5,7 @@ import { UserData } from "../interfaces/UserData";
 import "../styles/searchBar.css";
 import "../App.css"
 import { Link } from "react-router-dom";
+import githubIcon from '../assets/github-mark.png'
 
 export default function SearchApp(): JSX.Element {
   const [username, setUsername] = useState<string>("");
@@ -53,12 +54,17 @@ export default function SearchApp(): JSX.Element {
               <p>Name: {userData.name}</p>
               <p>Location: {userData.location}</p>
               <Link to={`/userpage/${userData.login}`}>
-                <button>Go to {userData.login} repos</button>
+                <button className="gotorepo">Go to {userData.login} repos</button>
               </Link>
             </div>
           </div>
         </div>
       )}
+    </div>
+    <div>
+    <div className="image-container">
+    <img src={githubIcon} alt="GitHub Icon" className="bottom-right-image" />
+      </div>
     </div>
     </header>
   );

@@ -1,0 +1,140 @@
+
+.userpage {
+  background-color: #7092d5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar-userpage {
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; 
+  padding: 16px; /* Add padding for spacing */
+}
+.github-icon {
+  justify-content: flex-end;
+  width: 80px; /* Adjust the width to your desired size */
+  height: 80px; /* Adjust the height to your desired size */
+  margin-right: 40px; /* Optional: Add some right margin for spacing */
+  
+}
+.navbar-userpage h2 {
+  margin: 0; /* Remove default margin */
+  margin-left: 200px;
+  flex: 1; /* Allow the h2 element to grow and take available space */
+  text-align: center;/* Center the text horizontally */
+  line-height: 80px; 
+  font-weight: 800;
+}
+
+/* Link styles */
+.LinkClass {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  display: block;
+  
+
+}
+
+.LinkClass:hover {
+  text-decoration: underline;
+}
+.right {
+  margin-top: 110px;
+  justify-content: space-around;
+}
+
+/* Dropdown styles */
+.dropdown {
+  padding: 5px; /* Adjust the padding to match the input */
+  height: 31px; /* Match the height with the input */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 180px;
+  margin-right: 20px;
+}
+
+/* Search input styles */
+.input {
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 1rem;
+  height: 20px;
+}
+
+/* Button styles */
+.button {
+  padding: 7px 24px; /* Adjust the padding to match the input */
+  background-color: #303336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+.button:hover {
+  background-color:  #1d1e1f;
+}
+
+
+/* User avatar styles */
+.user-avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.7); 
+}
+
+/* User info styles */
+.user-info {
+  margin-bottom: 20px;
+}
+
+/* Repository list styles */
+.repositories {
+  list-style: none;
+  padding: 0;
+}
+
+.repositories li {
+  margin-bottom: 10px;
+}
+
+/* Repository link styles */
+.repositories a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.repositories a:hover {
+  color: #0056b3;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 3fr 7fr; /* 3/7 and 4/7 column layout */
+  grid-gap: 16px; /* Adjust the gap between grid items */
+  margin: 16px; /* Optional: Add margin for spacing */
+}
