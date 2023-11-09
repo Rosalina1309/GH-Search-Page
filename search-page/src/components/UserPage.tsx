@@ -8,26 +8,42 @@ import UserRepoData from '../interfaces/UserRepoData';
 import UserProfile from './UserProfile';
 import UserRepos from './UserRepos';
 import '../styles/userPage.css';
-import githubIcon from '../assets/github-mark.png'
-import LoadingPage from '../components/LoadingPage'
+import githubIcon from '../assets/github-mark.png';
+import LoadingPage from '../components/LoadingPage';
 
+
+/**
+ * Functional component representing the user page, displaying user details and repositories.
+ *
+ * @component
+ * @returns {JSX.Element} UserPage component.
+ */
 
 const UserPage: React.FC = () => {
+
+  // Get the 'username' parameter from the URL
   const { username } = useParams<{ username: string }>();
+
+  // State variables to manage user data, repositories, search input, search type, and loading state
   const [userData, setUserData] = useState<any>(null);
   const [repositories, setRepositories] = useState<UserRepoData[]>([]);
   const [searchValue, setSearchValue] = useState('');
   const [searchType, setSearchType] = useState('name'); 
   const [loading, setLoading] = useState(true);
+
+  // Effect hook to fetch user data and repositories when the component mounts or 'username' parameter changes
   useEffect(() => {
     const fetchData = async () => {
       try {
         if (username) {
-          const user = await fetchUserByName(username);
-          console.log('user: ', user);
-          const repos = await fetchUserRepos(username);
-          console.log('repos: ', repos);
 
+          // Fetch user data and repositories based on the username
+          const user = await fetchUserByName(username);
+          // console.log('user: ', user);
+          const repos = await fetchUserRepos(username);
+          // console.log('repos: ', repos);
+
+          // Set user data, repositories, and loading state
           setUserData(user);
           setRepositories(repos);
           setLoading(false);
@@ -41,11 +57,16 @@ const UserPage: React.FC = () => {
     fetchData();
   }, [username]);
 
+  // Function to handle repository search based on input value and search type
   const handleSearch = async () => {
     try {
       if (searchValue && username) {
+
+        // Fetch user repositories
         const repos = await fetchUserRepos(username);
         let filteredRepos: UserRepoData[] = [];
+
+        // Filter repositories based on search type and input value
         if (searchType === 'name') {
           filteredRepos = repos.filter((repo) =>
             repo.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -55,6 +76,8 @@ const UserPage: React.FC = () => {
             repo.languages?.some((language) => language.toLowerCase().includes(searchValue.toLowerCase()))
           );
         }
+
+        // Set filtered repositories
         setRepositories(filteredRepos);
       }
     } catch (error) {
@@ -62,7 +85,7 @@ const UserPage: React.FC = () => {
     }
   };
   
-
+  // JSX structure for the user page including user profile, search options, and repository display
   return (
     <div className="userpage">
     {loading ? (
@@ -76,15 +99,21 @@ const UserPage: React.FC = () => {
           </Link>
         </div>
         <div className='body'>
+
+        {/* It checks if both userData and username are truthy values. If they are, it renders the <UserProfile /> component with username and userData as props inside the <div> element with the class name 'left'. If either userData or username (or both) are falsy, nothing is rendered inside the <div>. This conditional rendering ensures that the <UserProfile /> component is only rendered when both userData and username have valid values, preventing potential errors. */}
           <div className='left'>
             {userData && username && <UserProfile username={username} userData={userData} />}
           </div>
           <div className='right'>
             <h2>{username}'s Repositories</h2>
+
+            {/* The onChange event triggers a function that sets the searchType state based on the selected option's value (e.target.value). The className='dropdown' applies a CSS class to style the dropdown.  */}
             <select onChange={(e) => setSearchType(e.target.value)} className='dropdown'>
               <option value="name">Repository Name</option>
               <option value="language">Language</option>
             </select>
+                        
+            {/* This code creates an <input> element where the placeholder text dynamically changes based on the searchType state (either 'Search by repository name' or 'Search by language'). The value property is controlled by the searchValue state, and the onChange event updates the searchValue state as the user types. The className='input' applies a CSS class to style the input field. */}
             <input
               placeholder={searchType === 'name' ? 'Search by repository name' : 'Search by language'}
               value={searchValue}

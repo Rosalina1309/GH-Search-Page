@@ -5,14 +5,31 @@ import { UserData } from "../interfaces/UserData";
 import "../styles/searchBar.css";
 import "../App.css"
 import { Link } from "react-router-dom";
-import githubIcon from '../assets/github-mark.png'
+import githubIcon from '../assets/github-mark.png';
+
+/**
+ * Functional component representing the GitHub user search interface.
+ * Allows users to input a GitHub username, fetch user data, and display it.
+ *
+ * @component
+ * @returns {JSX.Element} SearchBar component.
+ */
 
 export default function SearchApp(): JSX.Element {
+
+  // State variables to manage input, user data, loading state, and errors
   const [username, setUsername] = useState<string>("");
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+
+    /**
+   * Handles form submission. Fetches user data based on the input username.
+   *
+   * @param {React.FormEvent} event - Form submission event.
+   * @returns {void}
+   */
   const handleFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault(); 
     try {
@@ -28,6 +45,7 @@ export default function SearchApp(): JSX.Element {
     }
   };
 
+  // JSX structure for the search form, loading indicator, error message, and user data display
   return  (
     <header className="App-header">
     <h1> GitHub Search Page</h1>

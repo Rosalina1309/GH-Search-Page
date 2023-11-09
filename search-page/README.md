@@ -12,11 +12,14 @@ I divided the components and tried to implement seperate of concern pattern, whi
 
 ## How to run the app
  
- Please run the commands on the terminal in the root folder
+ If you want to run the app locally please run the commands on the terminal in the root folder
  - cd search-page
  - npm install
  - npm start
 
 ## How to run the test suite
+ If you want to run the app locally please run the commands on the terminal in the root folder
+ - cd search-page
+ - npm t
 
 ## Future improvements
