@@ -21,6 +21,7 @@ jobs:
       - name: Run the tests
         run: npm run test
   build-and-deploy:
+    needs: run-qa
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -34,4 +35,4 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build # The folder the action should deploy.
+          folder: search-page/build # The folder the action should deploy.
