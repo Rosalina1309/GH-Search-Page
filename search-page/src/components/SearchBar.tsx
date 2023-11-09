@@ -48,6 +48,7 @@ export default function SearchApp(): JSX.Element {
   // JSX structure for the search form, loading indicator, error message, and user data display
   return  (
     <header className="App-header">
+      <h1>Hello changes</h1>
     <h1> GitHub Search Page</h1>
     <div className="search-container">
       <form onSubmit={handleFormSubmit} className="search-form">
