@@ -65,6 +65,7 @@
   width: 110px; /* Adjust width for smaller screens */
   margin-right: 10px; /* Adjust margin for spacing on smaller screens */
   margin-left:20px;
+  color:black;
 }
 
 /* Search input styles */
