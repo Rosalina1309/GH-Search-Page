@@ -80,7 +80,7 @@
 
 .bottom-right-image {
   width: 100%;
-  transform: translateX(40%); /* Center the image vertically */
+  transform: translateX(45%); /* Center the image vertically */
 }
 
 /* Add a media query for larger screens */

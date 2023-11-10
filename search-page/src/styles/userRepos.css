@@ -24,9 +24,10 @@
   background-color: #212121;
   border: 1px solid #ccc;
   border-radius: 15px;
-  margin: 10px;
-  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 100%;
+  padding: 1px;
 }
 .repos li > * {
   margin-bottom: 10px; /* Adjust the value as needed */

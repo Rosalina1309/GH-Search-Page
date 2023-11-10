@@ -10,7 +10,6 @@
   justify-content: center;
   color: white;
   padding: 0;
-  margin-left: 10px;
 }
 
 .navbar-userpage {
@@ -19,7 +18,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 20px;
+  gap: 10px;
   
 }
 
@@ -32,7 +31,6 @@
 
 .navbar-userpage h2 {
   font-size: 2rem;
-  margin-right: 5px;
   margin-left: 15px;
   flex: 1;
   text-align: center;
@@ -77,7 +75,7 @@
   border-radius: 5px;
   width: 150px; /* Adjust width for smaller screens */
   font-size: 1rem;
-  height: 20px;
+  height: 30px;
   
 }
 
@@ -110,7 +108,8 @@
   margin-bottom: 10px; /* Adjust margin for spacing on smaller screens */
 }
 .header-repo {
-  font-size: 1.8rem; /* Default font size */
+  font-size: 1.7rem; /* Default font size */
+  margin-bottom: 20px;
 }
 /* Repository list styles */
 
@@ -136,7 +135,6 @@
   display: grid;
   grid-template-columns: 1fr; /* Display one column on smaller screens */
   grid-gap: 16px;
-  margin-left:20px;
 
   /* Media query for larger screens */
   @media screen and (min-width: 768px) {
