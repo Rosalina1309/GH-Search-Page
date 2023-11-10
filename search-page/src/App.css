@@ -23,4 +23,10 @@
 .App-link {
   color: #61dafb;
 }
-
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .App-header {
+    flex-direction: column; /* Adjust for mobile layout */
+    align-items: center;
+  }
+}

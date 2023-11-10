@@ -1,9 +1,11 @@
 /* searchBar.css */
 
+/* Default styles */
 .search-container {
-  width: 500px;
-  padding: 20px;
+  width: 90%; /* Adjust for smaller screens */
+  max-width: 500px; /* Set a maximum width */
   margin: 20px auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,72 +14,47 @@
 .search-form {
   width: 100%;
   display: flex;
-  margin-bottom: 10px;
+  flex-direction: column; /* Adjust for smaller screens */
+  align-items: center;
 }
 
 .search-input {
-  flex: 1;
+  width: 100%; /* Adjust for smaller screens */
   padding: 8px;
   font-size: 16px;
-  margin-right: 10px;
+  margin-bottom: 10px;
   border: 1px solid white;
   border-radius: 5px;
 }
 
 .search-button {
+  width: 100%; /* Adjust for smaller screens */
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
   background-color: #303336;
-  color: rgb(255, 255, 255)
-}
-.search-button:hover {
-  background-color: rgb(22, 22, 22);
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
 }
 
-.loading-message,
-.error-message {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.user-container {
-  width: 100%; 
-  display: flex;
-  justify-content: center; 
-}
-
+/* Additional styles for smaller screens */
 .user-data-box {
+  width: 90%; /* Adjust for smaller screens */
+  max-width: 500px; /* Set a maximum width */
   margin-top: 20px;
-  width: 100%; 
-  max-width: 500px; 
-  border: 1px solid #ccc;
-  border-radius: 10px;
   padding: 15px;
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Adjust for smaller screens */
+  align-items: center; /* Adjust for smaller screens */
 }
 
-.user-avatar {
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-}
+
 
 .user-details {
-  flex: 1;
+  text-align: center; /* Center text on smaller screens */
 }
 
-.user-details h2 {
-  font-size: 1.7rem;
-  margin-bottom: 10px;
-}
-
-.user-details p {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
 .gotorepo {
   background-color: rgb(69, 75, 90) ;
   color: white;
@@ -89,16 +66,28 @@
 .gotorepo:hover {
   background-color:  #1d1e1f;
 }
+
 .image-container {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   overflow: hidden;
-  width: 350px; 
-  height: 350px; 
+  width: 40vw;
+  max-width: 330px; /* Set a maximum width */
+  z-index: 1; /* Ensure the image is on top of other elements */
 }
 
 .bottom-right-image {
-  width: 100%; /* Adjust the width as needed */
-  transform: translateX(43%);
+  width: 100%;
+  transform: translateX(40%); /* Center the image vertically */
+}
+
+/* Add a media query for larger screens */
+@media screen and (min-width: 768px) {
+  .search-container,
+  .user-data-box,
+  .image-container {
+    width: auto; /* Reset width for larger screens */
+    max-width: none; /* Reset max-width for larger screens */
+  }
 }

@@ -1,4 +1,6 @@
+/* userpage.css */
 
+/* Default styles */
 .userpage {
   background-color: #7092d5;
   min-height: 100vh;
@@ -6,34 +8,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
-  margin: 0;
   padding: 0;
+  max-width: 600px;
 }
-
 
 .navbar-userpage {
   font-family: 'Roboto Mono', monospace;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%; 
+  width: 100%;
   padding: 16px; /* Add padding for spacing */
 }
+
 .github-icon {
   justify-content: flex-end;
   width: 80px; /* Adjust the width to your desired size */
   height: 80px; /* Adjust the height to your desired size */
-  margin-right: 40px; /* Optional: Add some right margin for spacing */
-  
+  margin-right: 10px; /* Adjust margin for spacing on smaller screens */
 }
+
 .navbar-userpage h2 {
-  margin: 0; /* Remove default margin */
-  margin-left: 200px;
-  flex: 1; /* Allow the h2 element to grow and take available space */
-  text-align: center;/* Center the text horizontally */
-  line-height: 80px; 
+  font-size: 2.2rem;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  line-height: 40px;
   font-weight: 800;
 }
 
@@ -43,27 +44,28 @@
   color: #007bff;
   font-weight: bold;
   display: block;
-  
-
 }
 
 .LinkClass:hover {
   text-decoration: underline;
 }
+.left {
+  
+}
 .right {
-  margin-top: 110px;
-  justify-content: space-around;
+  margin: 10px; /* Adjust margin for spacing on smaller screens */
+  
 }
 
 /* Dropdown styles */
 .dropdown {
-  padding: 5px; /* Adjust the padding to match the input */
-  height: 31px; /* Match the height with the input */
+  padding: 5px;
+  height: 31px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 180px;
-  margin-right: 20px;
+  width: 110px; /* Adjust width for smaller screens */
+  margin-right: 10px; /* Adjust margin for spacing on smaller screens */
 }
 
 /* Search input styles */
@@ -72,28 +74,16 @@
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 250px;
+  width: 150px; /* Adjust width for smaller screens */
   font-size: 1rem;
   height: 20px;
 }
 
 /* Button styles */
 .button {
-  padding: 7px 24px; /* Adjust the padding to match the input */
-  background-color: #303336;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  padding: 7px 16px; /* Adjust padding for smaller screens */
   font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  
 }
-
-.button:hover {
-  background-color:  #1d1e1f;
-}
-
 
 /* User avatar styles */
 .user-avatar {
@@ -107,17 +97,18 @@
 
 /* User info styles */
 .user-info {
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Adjust margin for spacing on smaller screens */
 }
 
 /* Repository list styles */
 .repositories {
   list-style: none;
   padding: 0;
+  margin-left:5px;
 }
 
 .repositories li {
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* Adjust margin for spacing on smaller screens */
 }
 
 /* Repository link styles */
@@ -125,16 +116,30 @@
   text-decoration: none;
   color: #007bff;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
 .repositories a:hover {
   color: #0056b3;
 }
 
+
+
 .body {
   display: grid;
-  grid-template-columns: 3fr 7fr; /* 3/7 and 4/7 column layout */
-  grid-gap: 16px; /* Adjust the gap between grid items */
-  margin: 16px; /* Optional: Add margin for spacing */
+  grid-template-columns: 1fr; /* Display one column on smaller screens */
+  grid-gap: 16px;
+  margin: 16px; /* Add margin for spacing on larger screens */
+
+  /* Media query for larger screens */
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 3fr 7fr; /* 3/7 and 4/7 column layout on larger screens */
+    margin: 0; /* Remove margin for larger screens */
+  }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+  .right {
+    margin: 50px; /* Adjust the margin for smaller screens */
+  }
 }

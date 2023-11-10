@@ -25,22 +25,34 @@ export default function SearchApp(): JSX.Element {
 
 
     /**
-   * Handles form submission. Fetches user data based on the input username.
-   *
-   * @param {React.FormEvent} event - Form submission event.
-   * @returns {void}
+   * Handles the form submission when searching for a GitHub user by username.
+   * @param {React.FormEvent} event - The form submission event.
    */
   const handleFormSubmit = async (event: React.FormEvent) => {
-    event.preventDefault(); 
+    event.preventDefault();// Prevents the default form submission behavior 
     try {
-      setLoading(true);
+
+      // Set loading state to true while fetching data
+      setLoading(true); 
+
+       // Call the fetchUserByName function to retrieve user data
       const fetchedUserData: UserData = await fetchUserByName(username);
+
+      //setUserData to the data we have just fetched
       setUserData(fetchedUserData);
+
+      //as the data is there we set setError to null 
       setError(null);
     } catch (error) {
+
+       // Handle errors during data fetching
       setError("User not found or error occurred while fetching data.");
+
+      // Reset user data in case of an error
       setUserData(null);
     } finally {
+
+      // Set loading state to false regardless of success or failure
       setLoading(false);
     }
   };
@@ -50,6 +62,8 @@ export default function SearchApp(): JSX.Element {
     <header className="App-header">
     <h1> GitHub Search Page</h1>
     <div className="search-container">
+
+      {/* Search Form: Allows users to input a GitHub username and triggers the handleFormSubmit function on submission. */}
       <form onSubmit={handleFormSubmit} className="search-form">
         <input
           placeholder="Search for GitHub username"
@@ -61,6 +75,8 @@ export default function SearchApp(): JSX.Element {
           Search
         </button>
       </form>
+
+      {/* Loading and Error Messages: Conditionally displays loading and error messages based on the component's state. */}
       {loading && <p className="loading-message">Loading...</p>}
       {error && <p className="error-message">{error}</p>}
       {userData && (
@@ -80,6 +96,7 @@ export default function SearchApp(): JSX.Element {
       )}
     </div>
     <div>
+    {/* GitHub Icon: Positioned at the bottom-right corner of the header using the .image-container class. */}
     <div className="image-container">
     <img src={githubIcon} alt="GitHub Icon" className="bottom-right-image" />
       </div>

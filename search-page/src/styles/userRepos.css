@@ -1,39 +1,48 @@
-
-
+/* Responsive styles for .repos */
 .repos {
-  
   font-family: 'Roboto Mono', monospace;
-  
 }
 
 .repos h2 {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 1.5rem; /* Adjust font size for smaller screens */
+  margin: 10px;
 }
 
 .repos ul {
   list-style: none;
   padding: 0;
 }
+
 .repos .username {
   font-weight: 500;
-  color:aqua;
+  color: aqua;
 }
+
 .repos li {
   background-color: #212121;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 30px;
   margin-bottom: 20px;
-  padding: 20px;
-  
+  margin-left:20px;
+  margin-right:20px;
+  padding: 10px;
 }
-
+.repos li > * {
+  margin-bottom: 10px; /* Adjust the value as needed */
+}
 .repos li a {
   color: #3f9cff;
   text-decoration: none;
-  
 }
 
 .repos li a:hover {
   text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .repos h2 {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
 }
