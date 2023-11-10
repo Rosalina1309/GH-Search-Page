@@ -32,7 +32,8 @@
 
 .navbar-userpage h2 {
   font-size: 2rem;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 15px;
   flex: 1;
   text-align: center;
   line-height: 40px;
