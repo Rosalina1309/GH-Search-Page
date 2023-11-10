@@ -34,5 +34,6 @@ body {
   .App-header {
     flex-direction: column; /* Adjust for mobile layout */
     align-items: center;
+    width: 100%;
   }
 }

@@ -20,7 +20,7 @@
   justify-content: space-between;
   width: 100%;
   gap: 20px;
-  padding: 16px; /* Add padding for spacing */
+  
 }
 
 .github-icon {
@@ -31,9 +31,8 @@
 }
 
 .navbar-userpage h2 {
-  font-size: 2.2rem;
-  margin-left: 50px;
-  margin-right: 20px;
+  font-size: 2rem;
+  margin-right: 10px;
   flex: 1;
   text-align: center;
   line-height: 40px;
@@ -65,7 +64,7 @@
   border-radius: 5px;
   width: 110px; /* Adjust width for smaller screens */
   margin-right: 10px; /* Adjust margin for spacing on smaller screens */
-  margin-left:50px;
+  margin-left:20px;
 }
 
 /* Search input styles */
@@ -112,11 +111,7 @@
   font-size: 1.8rem; /* Default font size */
 }
 /* Repository list styles */
-.repositories {
-  list-style: none;
-  padding: 0;
-  margin-left:5px;
-}
+
 
 .repositories li {
   margin-bottom: 5px; /* Adjust margin for spacing on smaller screens */
@@ -139,7 +134,7 @@
   display: grid;
   grid-template-columns: 1fr; /* Display one column on smaller screens */
   grid-gap: 16px;
-  margin-left:50px;
+  margin-left:20px;
 
   /* Media query for larger screens */
   @media screen and (min-width: 768px) {
