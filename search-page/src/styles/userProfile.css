@@ -1,7 +1,8 @@
 .infos {
-  margin: 30px;
+  margin-left: 20px;
+  font-size: 1.5rem;
 }
-.profile p {
+.profile  {
   margin: 20px 0;
 }
 

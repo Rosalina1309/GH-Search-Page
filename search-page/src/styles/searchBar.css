@@ -69,6 +69,7 @@
 
 .image-container {
   position: fixed;
+  margin-right:5px;
   bottom: 0;
   right: 0;
   overflow: hidden;

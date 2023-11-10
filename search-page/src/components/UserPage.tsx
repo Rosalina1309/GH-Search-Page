@@ -109,7 +109,7 @@ const UserPage: React.FC = () => {
             {userData && username && <UserProfile username={username} userData={userData} />}
           </div>
           <div className='right'>
-            <h2>List of Repositories</h2>
+            <p className='header-repo'>List of Repositories</p>
 
             {/* The onChange event triggers a function that sets the searchType state based on the selected option's value (e.target.value). The className='dropdown' applies a CSS class to style the dropdown.  */}
             <select onChange={(e) => setSearchType(e.target.value)} className='dropdown'>

@@ -10,7 +10,7 @@
   justify-content: center;
   color: white;
   padding: 0;
-  max-width: 600px;
+  margin-left: 10px;
 }
 
 .navbar-userpage {
@@ -19,6 +19,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 20px;
   padding: 16px; /* Add padding for spacing */
 }
 
@@ -31,7 +32,8 @@
 
 .navbar-userpage h2 {
   font-size: 2.2rem;
-  margin: 0;
+  margin-left: 50px;
+  margin-right: 20px;
   flex: 1;
   text-align: center;
   line-height: 40px;
@@ -50,12 +52,9 @@
   text-decoration: underline;
 }
 .left {
-  
+  margin: 10px;
 }
-.right {
-  margin: 10px; /* Adjust margin for spacing on smaller screens */
-  
-}
+
 
 /* Dropdown styles */
 .dropdown {
@@ -66,6 +65,7 @@
   border-radius: 5px;
   width: 110px; /* Adjust width for smaller screens */
   margin-right: 10px; /* Adjust margin for spacing on smaller screens */
+  margin-left:50px;
 }
 
 /* Search input styles */
@@ -77,12 +77,21 @@
   width: 150px; /* Adjust width for smaller screens */
   font-size: 1rem;
   height: 20px;
+  
 }
 
 /* Button styles */
 .button {
   padding: 7px 16px; /* Adjust padding for smaller screens */
   font-size: 1rem;
+  background-color:rgb(38, 38, 42);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+.button:hover {
+  background-color:rgb(65, 65, 69);
 }
 
 /* User avatar styles */
@@ -99,7 +108,9 @@
 .user-info {
   margin-bottom: 10px; /* Adjust margin for spacing on smaller screens */
 }
-
+.header-repo {
+  font-size: 1.8rem; /* Default font size */
+}
 /* Repository list styles */
 .repositories {
   list-style: none;
@@ -128,18 +139,20 @@
   display: grid;
   grid-template-columns: 1fr; /* Display one column on smaller screens */
   grid-gap: 16px;
-  margin: 16px; /* Add margin for spacing on larger screens */
+  margin-left:50px;
 
   /* Media query for larger screens */
   @media screen and (min-width: 768px) {
     grid-template-columns: 3fr 7fr; /* 3/7 and 4/7 column layout on larger screens */
     margin: 0; /* Remove margin for larger screens */
+    
   }
 }
 
 /* Media query for smaller screens */
 @media screen and (max-width: 767px) {
-  .right {
-    margin: 50px; /* Adjust the margin for smaller screens */
+  .left {
+    margin: 10px; 
   }
+  
 }
