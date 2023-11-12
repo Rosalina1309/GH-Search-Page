@@ -1,4 +1,4 @@
-name: reactAppTestingnDeploy
+name: GH-Search-Page
 run-name: ${{ github.actor }} is testing her app
 on: 
   push:
